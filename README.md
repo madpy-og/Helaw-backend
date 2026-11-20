@@ -4,12 +4,19 @@
 [![Express](https://img.shields.io/badge/Backend-Express%20%2B%20TypeScript-000000?logo=express&logoColor=white)](https://expressjs.com/)
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-3448C5?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+[![Frontend Repo](https://img.shields.io/badge/Frontend%20Repo-Helaw--frontend-646CFF?logo=github&logoColor=white)](https://github.com/madpy-og/Helaw-frontend)
 [![Swagger](https://img.shields.io/badge/Docs-Swagger%20OpenAPI-85EA2D?logo=swagger&logoColor=black)](https://swagger.io/)
 [![License](https://img.shields.io/badge/License-ISC-green.svg)](https://opensource.org/licenses/ISC)
+
+🚀 **Live Demo:** [helaw.vercel.app](https://helaw.vercel.app/)  
+🔗 **Frontend SPA Repository:** [github.com/madpy-og/Helaw-frontend](https://github.com/madpy-og/Helaw-frontend)
 
 **HeLaw Backend** (Helper Law) is the core RESTful API service powering **HeLaw**, an AI-powered legal assistant platform designed specifically to guide Micro, Small, and Medium Enterprises (MSMEs) in Indonesia.
 
 The service provides secure authentication, conversation session management, multimodal document ingestion (PDFs and images via Cloudinary), and deep legal reasoning powered by **Google Gemini 2.5 Flash** (`@google/genai`), delivering structured **Actionable Insights** (To-Do, Prohibitions, and Sanctions) for Indonesian business compliance.
+
+> [!NOTE]
+> This repository contains the **Backend API** service. The user-facing client application is maintained in [**madpy-og/Helaw-frontend**](https://github.com/madpy-og/Helaw-frontend).
 
 ---
 
@@ -250,6 +257,14 @@ Access `/api-docs` when running the server for interactive documentation and req
 | Method | Endpoint | Description | Auth Required |
 | :--- | :--- | :--- | :---: |
 | `POST` | `/api/conversations/:id/messages` | Send message with up to 5 file attachments (multipart/form-data, max 10MB). Returns contextual AI advice and structured Actionable Insights *(Rate Limited)* | Yes |
+
+---
+
+## 🔗 Related Repositories
+
+| Repository | Description |
+| :--- | :--- |
+| [**Helaw-frontend**](https://github.com/madpy-og/Helaw-frontend) | React 19, Vite, and Tailwind CSS Single Page Application (SPA). |
 
 ---
 
