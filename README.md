@@ -5,11 +5,13 @@
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-3448C5?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
 [![Frontend Repo](https://img.shields.io/badge/Frontend%20Repo-Helaw--frontend-646CFF?logo=github&logoColor=white)](https://github.com/madpy-og/Helaw-frontend)
-[![Swagger](https://img.shields.io/badge/Docs-Swagger%20OpenAPI-85EA2D?logo=swagger&logoColor=black)](https://swagger.io/)
+[![Swagger](https://img.shields.io/badge/Docs-Swagger%20OpenAPI-85EA2D?logo=swagger&logoColor=black)](https://api.helaw.maddaathia.my.id/api-docs)
 [![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-ISC-green.svg)](https://opensource.org/licenses/ISC)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-helaw.maddaathia.my.id-brightgreen)](https://helaw.maddaathia.my.id/)
 
-🚀 **Live Demo:** [helaw.vercel.app](https://helaw.vercel.app/)  
+🚀 **Live Demo:** [helaw.maddaathia.my.id](https://helaw.maddaathia.my.id/)  
+📚 **Live Swagger Docs:** [api.helaw.maddaathia.my.id/api-docs](https://api.helaw.maddaathia.my.id/api-docs)  
 🔗 **Frontend SPA Repository:** [github.com/madpy-og/Helaw-frontend](https://github.com/madpy-og/Helaw-frontend)
 
 **HeLaw Backend** (Helper Law) is the core RESTful API service powering **HeLaw**, an AI-powered legal assistant platform designed specifically to guide Micro, Small, and Medium Enterprises (MSMEs) in Indonesia.
@@ -227,8 +229,8 @@ npm run build
 npm start
 ```
 
-*The server will be available at: `http://localhost:3000`*  
-*Interactive Swagger documentation: `http://localhost:3000/api-docs`*
+*The server will be available at: `http://localhost:3000` (Local) / `https://api.helaw.maddaathia.my.id` (Production)*  
+*Interactive Swagger documentation: `https://api.helaw.maddaathia.my.id/api-docs`*
 
 ---
 
@@ -247,7 +249,7 @@ cp .env.example .env
 nano .env
 ```
 
-Make sure `CLIENT_URL` is set to your production frontend domain (e.g. `https://helaw.vercel.app` or custom domain) and `DATABASE_URL` is configured.
+Make sure `CLIENT_URL` is set to your production frontend domain (e.g. `https://helaw.maddaathia.my.id`) and `DATABASE_URL` is configured.
 
 ### 2. Build and Start Container
 
