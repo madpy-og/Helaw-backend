@@ -6,6 +6,7 @@
 [![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-3448C5?logo=cloudinary&logoColor=white)](https://cloudinary.com/)
 [![Frontend Repo](https://img.shields.io/badge/Frontend%20Repo-Helaw--frontend-646CFF?logo=github&logoColor=white)](https://github.com/madpy-og/Helaw-frontend)
 [![Swagger](https://img.shields.io/badge/Docs-Swagger%20OpenAPI-85EA2D?logo=swagger&logoColor=black)](https://swagger.io/)
+[![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-ISC-green.svg)](https://opensource.org/licenses/ISC)
 
 🚀 **Live Demo:** [helaw.vercel.app](https://helaw.vercel.app/)  
@@ -228,6 +229,79 @@ npm start
 
 *The server will be available at: `http://localhost:3000`*  
 *Interactive Swagger documentation: `http://localhost:3000/api-docs`*
+
+---
+
+## 🐳 Docker Deployment Guide (VPS)
+
+Deploying HeLaw Backend on a VPS using Docker & Docker Compose:
+
+### 1. Clone & Environment Configuration on VPS
+
+```bash
+git clone https://github.com/madpy-og/Helaw-backend.git
+cd Helaw-backend
+
+# Create and populate production .env
+cp .env.example .env
+nano .env
+```
+
+Make sure `CLIENT_URL` is set to your production frontend domain (e.g. `https://helaw.vercel.app` or custom domain) and `DATABASE_URL` is configured.
+
+### 2. Build and Start Container
+
+Using **Docker Compose** (Recommended):
+```bash
+# Build image and run in detached mode
+docker compose up -d --build
+```
+
+Or using **Standalone Docker**:
+```bash
+# Build Docker image
+docker build -t helaw-backend .
+
+# Run container with environment file
+docker run -d \
+  --name helaw-backend \
+  --restart unless-stopped \
+  -p 3000:3000 \
+  --env-file .env \
+  helaw-backend
+```
+
+### 3. Initialize Database Tables inside Container
+
+If you haven't initialized your PostgreSQL tables yet, run the database setup script directly inside the running container:
+
+```bash
+# Using Docker Compose:
+docker compose exec backend node dist/setup.js
+
+# Or using Docker CLI:
+docker exec -it helaw-backend node dist/setup.js
+```
+
+### 4. Useful Docker Management Commands
+
+```bash
+# View real-time logs
+docker compose logs -f
+
+# Check container status
+docker compose ps
+
+# Restart the application
+docker compose restart
+
+# Stop the container
+docker compose down
+
+# Rebuild after updating code (git pull)
+git pull origin main
+docker compose up -d --build
+```
 
 ---
 
